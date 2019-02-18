@@ -218,6 +218,12 @@ coef(summary(lm(csat ~ C(region, contr.helmert),
 
 ##   1. Add on to the regression equation that you created in exercise 1 by
 ##      generating an interaction term and testing the interaction.
+lsr6 <- lm(energy ~ metro + green + toxic, data = states) ##EQUATION FROM EXERCISE 1
+lsr6_1 <- lm(energy ~ metro * green * toxic, data = states)
+summary(lsr6_1)
 
 ##   2. Try adding region to the model. Are there significant differences
 ##      across the four regions?
+lsr6_2 <- lm(energy ~ metro + green + toxic + region, data = states)
+summary(lsr6_2)
+## NO SIGNIFICANT DIFFERENCES ACROSS THE REGIONS
